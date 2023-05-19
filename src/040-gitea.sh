@@ -11,8 +11,8 @@ docker compose up -d;
 ## SSH Passthrough
 ## https://docs.gitea.io/en-us/installation/install-with-docker-rootless/#ssh-container-passthrough
 ##
-## Note: 999-post.sh restarts adds a rule to sshd_config and restarts sshd, which
-## is required for SSH passthrough to start working.
+## Note: 999-post.sh adds a rule to sshd_config and restarts sshd, which
+## is required for SSH passthrough to work.
 rm /usr/local/bin/gitea-shell || true;
 
 cat << "EOF" >> /usr/local/bin/gitea-shell

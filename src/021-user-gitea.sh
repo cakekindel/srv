@@ -36,7 +36,3 @@ cp ./gitea-docker-compose.yml /home/git/docker-compose.yml
 cp ./gitea-app.ini            /home/git/config/app.ini
 
 chown -R git:git /home/git
-
-## docker user perms
-chown -R 1000:1000 /home/git/data
-chown -R 1000:1000 /home/git/config
