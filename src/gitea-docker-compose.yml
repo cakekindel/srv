@@ -1,0 +1,19 @@
+version: "3"
+
+name: gitea_compose
+
+services:
+  server:
+    image: gitea/gitea:dev-rootless
+    container_name: gitea
+    user: "1000"
+    restart: always
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /home/git/data/:/var/lib/gitea/data
+      - /home/git/git/:/var/lib/gitea/git
+      - /home/git/config/:/etc/gitea
+    ports:
+      - "8881:3000"
+      - "127.0.0.1:2222:22"

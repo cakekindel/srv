@@ -1,0 +1,20 @@
+# $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+ChallengeResponseAuthentication no
+
+UsePAM yes
+
+X11Forwarding yes
+PrintMotd no
+
+AcceptEnv LANG LC_*
+
+Subsystem	sftp	/usr/lib/openssh/sftp-server
+
+PasswordAuthentication no
+
+Match User git
+  AuthorizedKeysCommandUser git
+  AuthorizedKeysCommand /usr/bin/docker exec -i gitea /usr/local/bin/gitea keys -e git -u %u -t %t -k %k
