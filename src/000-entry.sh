@@ -7,10 +7,6 @@ subdomain_gitea="${SUBDOMAIN_GITEA:-git}"
 
 uid_git="${UID_GIT:-1000}"
 
-# NOTE: hard-coded in ./gitea-docker-compose.yml, ./nginx.conf
-port_gitea_public="${PORT_GITEA:-8880}"
-port_gitea_internal="${PORT_GITEA:-8881}"
-
 # Creates a login session for `user` (positional argument 1) in their home directory,
 # and executes a bash command string (positional argument 2) as `user`.
 #

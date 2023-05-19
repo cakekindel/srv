@@ -14,5 +14,5 @@ services:
       - /home/git/data/:/var/lib/gitea/data
       - /home/git/config/:/etc/gitea
     ports:
-      - "8881:3000"
+      - "8880:3000" # see also: ./nginx.conf
       - "127.0.0.1:2222:22"
