@@ -12,7 +12,6 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /home/git/data/:/var/lib/gitea/data
-      - /home/git/git/:/var/lib/gitea/git
       - /home/git/config/:/etc/gitea
     ports:
       - "8881:3000"
