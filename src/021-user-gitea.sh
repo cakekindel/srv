@@ -40,7 +40,5 @@ chown -R git:git /home/git/data
 chown -R git:git /home/git/data/git
 chown -R git:git /home/git/config
 
-chmod -R 777 /home/git
 chmod -R 777 /home/git/data
-chmod -R 777 /home/git/data/git
 chmod -R 777 /home/git/config

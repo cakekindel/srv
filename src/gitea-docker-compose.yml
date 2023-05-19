@@ -11,6 +11,7 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+      - /home/git/data/:/data
       - /home/git/data/:/var/lib/gitea/data
       - /home/git/config/:/etc/gitea
     ports:

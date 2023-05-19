@@ -21,7 +21,7 @@ function user_init {
 
   cp /root/.ssh/local_ed25519.pub /home/$1/.ssh/authorized_keys
   chown $1:$1 /home/$1/.ssh/authorized_keys
-  chmod 755 /home/$1/.ssh/authorized_keys
+  chmod 600 /home/$1/.ssh/authorized_keys
 
   doas $1 "
   echo $2 >> ~/.ssh/authorized_keys;
