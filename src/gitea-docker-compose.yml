@@ -4,7 +4,7 @@ name: gitea_compose
 
 services:
   server:
-    image: gitea/gitea:dev-rootless
+    image: gitea/gitea:latest-rootless
     container_name: gitea
     user: "1000"
     restart: always
@@ -17,3 +17,14 @@ services:
     ports:
       - "8880:3000" # see also: ./nginx.conf
       - "127.0.0.1:2222:22"
+  runner:
+    image: toadlib/act_runner:latest
+    restart: always
+    depends_on:
+      - server
+    volumes:
+      - /home/git/data/act_runner:/data
+      - /home/git/runner-config.yml:/config.yml
+      - /run/user/1000/docker.sock:/var/run/docker.sock
+    env_file:
+      - /home/git/.env.runner

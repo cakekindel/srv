@@ -1,0 +1,22 @@
+log:
+  level: info
+
+runner:
+  file: .runner
+  capacity: 1
+  timeout: 3h
+  insecure: false
+  fetch_timeout: 5s
+  fetch_interval: 2s
+
+cache:
+  enabled: true
+  dir: "/data/.cache"
+  host: ""
+  port: 0
+
+container:
+  network_mode: bridge
+  privileged: false
+  options:
+  workdir_parent:

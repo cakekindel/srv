@@ -37,9 +37,11 @@ ssh-keygen -t ed25519 -C "local" -f /root/.ssh/local_ed25519 -P ''
 cp ./sshd_config.presetup /etc/ssh/sshd_config
 systemctl restart sshd
 
-source ./010-apt.sh
-source ./020-users.sh
-source ./030-net.sh
-source ./031-routing.sh
-source ./040-gitea.sh
+source ./010-system-apt.sh
+source ./011-system-users.sh
+source ./020-net.sh
+source ./021-net-routing.sh
+source ./022-net-ssl.sh
+source ./030-gitea-actions.sh
+source ./031-gitea.sh
 source ./999-post.sh

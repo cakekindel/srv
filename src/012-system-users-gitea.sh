@@ -10,6 +10,7 @@ else
   mkdir /tmp/git
   mkdir /tmp/git/data
   mkdir /tmp/git/data/git
+  mkdir /tmp/git/data/act_runner
   mkdir /tmp/git/config
 fi
 
@@ -35,9 +36,15 @@ mv /tmp/git/config /home/git/
 cp ./gitea-docker-compose.yml /home/git/docker-compose.yml
 cp ./gitea-app.ini            /home/git/config/app.ini
 
+touch /home/git/runner-config.yml
+touch /home/git/.env.runner
+
 chown -R git:git /home/git
+chown -R git:git /home/git/runner-config.yml
+chown -R git:git /home/git/.env.runner
 chown -R git:git /home/git/data
 chown -R git:git /home/git/data/git
+chown -R git:git /home/git/data/act_runner
 chown -R git:git /home/git/config
 
 chmod -R 777 /home/git/data

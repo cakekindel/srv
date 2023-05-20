@@ -34,5 +34,5 @@ function user_init {
   "
 }
 
-source ./021-user-gitea.sh
-source ./022-user-others.sh
+source ./012-system-users-gitea.sh
+source ./013-system-users-other.sh

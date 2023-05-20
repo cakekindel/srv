@@ -17,11 +17,7 @@ rm /usr/local/bin/gitea-shell || true;
 
 cat << "EOF" >> /usr/local/bin/gitea-shell
 #!/bin/sh
-/usr/bin/docker context use rootless
-/usr/bin/docker exec -i \
-  --env SSH_ORIGINAL_COMMAND="$SSH_ORIGINAL_COMMAND" \
-  gitea \
-  sh "$@"
+/usr/bin/docker compose exec -i --env SSH_ORIGINAL_COMMAND="$SSH_ORIGINAL_COMMAND" server sh "$@"
 EOF
 
 chmod +x /usr/local/bin/gitea-shell
