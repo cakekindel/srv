@@ -1,5 +1,7 @@
 #! /usr/bin/bash
 
+uid_git=${uid_git:-}
+
 ## backup gitea data to /tmp
 mkdir -p /tmp/git
 if id git &>/dev/null; then
@@ -17,17 +19,17 @@ fi
 ## delete and recreate `git` user
 user_del_if_exist git
 
-echo $uid_git
-groupadd --gid $uid_git git
+echo "$uid_git"
+groupadd --gid "$uid_git" git
 useradd \
-  --gid $uid_git \
-  --uid $uid_git \
+  --gid "$uid_git" \
+  --uid "$uid_git" \
   --create-home \
   --shell /bin/bash \
   git
 
-read -p 'enter public ssh key allowing sessions as `git`:' git_ssh_pub
-user_init git $git_ssh_pub
+read -rp "enter public ssh key allowing sessions as \`git\`:" git_ssh_pub
+user_init git "$git_ssh_pub"
 
 ## restore homedir
 mv /tmp/git/data   /home/git/

@@ -3,7 +3,6 @@
 set -xo pipefail
 
 domain_root="${DOMAIN_ROOT:-orionkindel.com}"
-subdomain_gitea="${SUBDOMAIN_GITEA:-git}"
 
 uid_git="${UID_GIT:-1000}"
 
@@ -27,7 +26,7 @@ uid_git="${UID_GIT:-1000}"
 # ...
 # ```
 function doas {
-  ssh -F /dev/null -o IdentitiesOnly=yes -i /root/.ssh/local_ed25519 $1@localhost "set -xo pipefail; $2"
+  ssh -F /dev/null -o IdentitiesOnly=yes -i /root/.ssh/local_ed25519 "$1@localhost" "set -xo pipefail; $2"
 }
 
 rm /root/.ssh/local_ed25519 || true;

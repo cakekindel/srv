@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-read -p 'enter action runner token: ' token
+read -rp 'enter action runner token: ' token
 
 cp ./gitea-actions-runner-config.yml /home/git/runner-config.yml
 
