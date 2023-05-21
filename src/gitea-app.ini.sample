@@ -13,7 +13,7 @@ SSH_PORT         = 22
 SSH_LISTEN_PORT  = 22
 LFS_START_SERVER = true
 ROOT_URL         = https://git.orionkindel.com/
-LFS_JWT_SECRET   = UsqQwv84asJvQbpkp0gILFIQnuX7-dBvWG_Y3-hRr7w
+LFS_JWT_SECRET   = ; <snip>
 OFFLINE_MODE     = false
 
 [database]
@@ -32,8 +32,7 @@ CHARSET  = utf8
 ISSUE_INDEXER_PATH = /data/gitea/indexers/issues.bleve
 
 [session]
-PROVIDER_CONFIG = /data/gitea/sessions
-PROVIDER        = file
+PROVIDER = db
 
 [picture]
 AVATAR_UPLOAD_PATH            = /data/gitea/avatars
@@ -53,7 +52,7 @@ INSTALL_LOCK                  = true
 SECRET_KEY                    = 
 REVERSE_PROXY_LIMIT           = 1
 REVERSE_PROXY_TRUSTED_PROXIES = *
-INTERNAL_TOKEN                = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2ODQ0Njk4MTJ9.0PBZpL59ML5l-IKkIY6Vos9Sjyp6_pqxz-decLdY8cs
+INTERNAL_TOKEN                = ; <snip>
 PASSWORD_HASH_ALGO            = pbkdf2
 
 [service]

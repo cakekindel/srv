@@ -37,6 +37,7 @@ mv /tmp/git/config /home/git/
 
 cp ./gitea-docker-compose.yml /home/git/docker-compose.yml
 cp ./gitea-app.ini            /home/git/config/app.ini
+sed -i "s/\\\${{TIMESTAMP}}/$(date +%s)/g" /home/git/config/app.ini
 
 touch /home/git/runner-config.yml
 touch /home/git/.env.runner
